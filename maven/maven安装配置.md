@@ -4,8 +4,8 @@
 * 3. Maven程序包
 # 下载安装
 * 1.前往https://maven.apache.org/download.cgi下载最新版的Maven程序
-* 2.将文件解压到D:\DevInstall\maven目录下
-* 3.新建环境变量MAVEN_HOME，赋值D:\DevInstall\maven
+* 2.将文件解压到D:\DevInstall\apache-maven-3.3.9目录下
+* 3.新建环境变量MAVEN_HOME，赋值D:\DevInstall\apache-maven-3.3.9
 * 4.编辑环境变量Path，追加%MAVEN_HOME%\bin\;
 * 5.maven安装完成，检查是否安装成功
 ```bash
