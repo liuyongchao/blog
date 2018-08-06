@@ -68,7 +68,7 @@ Vue CLI v3.0.0-rc.10
   ESLint + Standard config
 > ESLint + Prettier
 ```
-* 8.选择其他lint功能:(按<space>选择，<a>切换全部，<i>反转选择）
+* 8.选择其他lint功能:(按`<space>`选择，`<a>`切换全部，`<i>`反转选择）
 ```bash
 ? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)
 >(*) Lint on save保存检查
