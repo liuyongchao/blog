@@ -85,6 +85,11 @@ Vue CLI v3.0.0-rc.10
 ? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? In dedicated config files
 ? Save this as a preset for future projects? (y/N)
 ```
+* 11.切换到vue-rjs目录，并运行执行
+```bash
+cd vue-rjs
+npm run serve
+```
 
 
 
