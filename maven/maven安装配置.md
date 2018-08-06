@@ -15,10 +15,15 @@ mvn -v
 * 1.打开Window->Preferences->Maven->Installations，右侧点击Add
 * 2.设置maven的安装目录，然后Finish
 * 3.选中添加的maven，并Apply
-* 4.打开Window->Preferences->Maven->User Settings，配置并Apply
+* 4.修改D:\DevInstall\apache-maven-3.3.9\conf\settings.xml文件添加
+```xml
+<localRepository>D:\DevInstall\repository</localRepository>
+```
+* 5.打开Window->Preferences->Maven->User Settings，配置并Apply
 ```bash
-user Settings
-D:\DevInstall\maven\conf\settings.xml
+配置Global Settings
+D:\DevInstall\apache-maven-3.3.9\conf\settings.xml
+然后点击Update Settings,Local Repository自动更新为步骤4中的路径
 Local Repository
 D:\DevInstall\repository
 ```
