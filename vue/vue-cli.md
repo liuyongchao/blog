@@ -90,7 +90,15 @@ Vue CLI v3.0.0-rc.10
 cd vue-rjs
 npm run serve
 ```
-
+* 12.打开浏览器访问，查看是否启动成功
+```bash
+ App running at:
+ - Local:   http://localhost:8080/
+ - Network: http://xxx.xxx.xx.xx:8080/
+ 
+ Note that the development build is not optimized.
+ To create a production build, run npm run build.
+```
 
 
 
