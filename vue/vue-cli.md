@@ -22,21 +22,70 @@ npm i -g @vue/cli
 * 2.创建项目
 ```bash
 vue create my-project
+注意：window模式下，用cmd命令行运行，否则无法进行选择（在当前文件夹下`shift + 右键`，选择‘在此处打开命令窗口’）
 ```
-* 3.此处有两个选择
+* 3.此处有两个选择,通过`↑↓`选择Manually select features=>`enter`键
 ```bash
-default (babel, eslint)默认套餐，提供babel和eslint支持
-Manually select features自己去选择需要的功能，提供更多的特性选择。比如如果想要支持 TypeScript ，就应该选择这一项。
-可以使用上下方向键来切换选项。如果只需要 babel 和 eslint 支持，那么选择第一项，就完事了，静静等待 vue 初始化项目。
-vue-cli 内置支持了8个功能特性，可以多选：使用方向键在特性选项之间切换，使用空格键选中当前特性，使用 a 键切换选择所有，使用 i 键翻转选项。
-对于每一项的功能，此处做个简单描述：
-TypeScript 支持使用 TypeScript 书写源码
-Progressive Web App (PWA) Support PWA 支持。
-Router 支持 vue-router 。
-Vuex 支持 vuex 。
-CSS Pre-processors 支持 CSS 预处理器。
-Linter / Formatter 支持代码风格检查和格式化。
-Unit Testing 支持单元测试。
-E2E Testing 支持 E2E 测试。
-我选择了 Router，Vuex，CSS Pre-processors，Linter / Formatter
+Vue CLI v3.0.0-rc.10
+? Please pick a preset: (Use arrow keys)
+ default (babel, eslint)  默认配置
+>Manually select features手动配置
 ```
+* 4.通过`↑↓`选择所需要内容，按`spacebar`空格键选定，然后按`enter`键，进入下一步针对每一项详细设置
+```bash
+Vue CLI v3.0.0-rc.10
+? Please pick a preset: Manually select features
+? Check the features needed for your project:
+ (*) Babel
+ ( ) TypeScript
+ ( ) Progressive Web App (PWA) Support
+ (*) Router
+ (*) Vuex
+ (*) CSS Pre-processors
+>(*) Linter / Formatter
+ ( ) Unit Testing
+ ( ) E2E Testing
+ ```
+* 5.检查项目所需的功能，路由是否使用历史模式，选择N
+```bash
+Vue CLI v3.0.0-rc.10
+? Please pick a preset: Manually select features
+? Check the features needed for your project: Babel, Router, Vuex, CSS Pre-processors, Linter
+? Use history mode for router? (Requires proper server setup for index fallback in production) (Y/n)
+```
+* 6.选择一个CSS预处理器,选择 SCSS/SASS
+```bash
+? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default): (Use arrow keys)
+> SCSS/SASS
+  LESS
+  Stylus
+```
+* 7.选择linter / formatter配置,选择ESLint + Prettier
+```bash
+? Pick a linter / formatter config:
+  ESLint with error prevention only
+  ESLint + Airbnb config
+  ESLint + Standard config
+> ESLint + Prettier
+```
+* 8.选择其他lint功能:(按<space>选择，<a>切换全部，<i>反转选择）
+```bash
+? Pick additional lint features: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+>(*) Lint on save保存检查
+ ( ) Lint and fix on commit检查修复提交
+```
+* 9.为Babel，PostCSS，ESLint等配置保存各自到单文件，还是统一保存到package.json,这里选择In dedicated config files
+```bash
+? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)
+> In dedicated config files
+  In package.json
+```
+* 10.是否将其保存为未来项目的预设，这里选择N
+```bash
+? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? In dedicated config files
+? Save this as a preset for future projects? (y/N)
+```
+
+
+
+
