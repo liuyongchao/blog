@@ -35,10 +35,10 @@ return request({
 * 3.客户端实际请求地址为http://localhost:8080/api/login,nginx反向代理后，后端实际收到的请求地址为：http://localhost:80/login
 
 # redis处理session共享架构图
-- |---客户端1
-- |        --
-           -
-- |---客户端2--- Nginx
-- |          -
-- |        --
-- |---客户端3
+*|---客户端1               |服务器1             
+        
+           
+*|---客户端2  --- Nginx  ---|服务器2  ---Redis
+          
+       
+*|---客户端3              |服务器3
