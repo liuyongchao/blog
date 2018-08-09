@@ -1,4 +1,4 @@
-# redis安装
+# redis安装redis-4.0.11版本
 * 1.[下载最新版本](https://redis.io/)
 ```bash
 wget http://download.redis.io/releases/redis-4.0.11.tar.gz
