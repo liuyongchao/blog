@@ -26,3 +26,8 @@ cd src && make install
 ```bash
 ./redis-server
 ```
+* 7.Linux在终端启动程序关闭终端不退出的方法
+```bash
+nohup ./redis-server &
+```
+
