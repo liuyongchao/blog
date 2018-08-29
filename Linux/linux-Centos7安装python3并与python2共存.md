@@ -42,5 +42,10 @@ yum -y install gcc automake autoconf libtool make
 yum install gcc gcc-c++
 yum install make
 ```
-
-
+* 6.make 报错No targets specified and no makefile found
+```
+wget http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.6.tar.gz
+tar zxvf ncurses-5.6.tar.gz
+./ncurses-5.6/configure -prefix=/usr/local -with-shared-without-debug
+```
+* 7.
