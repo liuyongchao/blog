@@ -28,3 +28,19 @@ wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
 ```
 tar -xvf Python-3.7.0.tar.xz
 ```
+* 3.切换进去编译安装
+```
+cd Python-3.7.0/
+make && make install
+```
+* 4.make安装,make是gcc的编译器
+```
+yum -y install gcc automake autoconf libtool make
+```
+* 5.安装gy++
+```
+yum install gcc gcc-c++
+yum install make
+```
+
+
