@@ -51,7 +51,7 @@ scrapy crawl quotes -o quotes.jl
 scrapy crawl quotes -o quotes.csv
 scrapy crawl quotes -o quotes.xml
 ```
-## 5.远程ftp
+## 6.远程ftp
 ```
 scrapy crawl quotes -o ftp://user:pass@ftp.example.com/path/quotes.csv
 ```
