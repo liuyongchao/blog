@@ -1,14 +1,14 @@
 
-## 创建一个项目
+## 1.创建一个项目
 ```
 scrapy startproject quotetutorial
 ```
-## 创建spider并指定域名
+## 2.创建spider并指定域名
 ```
 cd quotetutorial
 scrapy genspider quotes quotes.toscrape.com
 ```
-## 定义字段items.py
+## 3.定义字段items.py
 ```
 class QuoteItem(scrapy.Item):
     # define the fields for your item here like:
@@ -17,9 +17,9 @@ class QuoteItem(scrapy.Item):
     author = scrapy.Field()
     tags = scrapy.Field()
 ```
-## 撰写程序quotes.py   
-## -*- coding: utf-8 -*-
+## 4.撰写程序quotes.py   
 ```
+# -*- coding: utf-8 -*-
 import scrapy
 from quotetutorial.items import QuoteItem
 
@@ -43,7 +43,7 @@ class QuotesSpider(scrapy.Spider):
             url = response.urljoin(next)
             yield scrapy.Request(url = url,callback = self.parse)
 ```
-## 运行爬虫项目
+## 5.运行爬虫项目
 ```
 scrapy crawl quotes
 scrapy crawl quotes -o quotes.json
@@ -51,7 +51,7 @@ scrapy crawl quotes -o quotes.jl
 scrapy crawl quotes -o quotes.csv
 scrapy crawl quotes -o quotes.xml
 ```
-## 远程ftp
+## 5.远程ftp
 ```
 scrapy crawl quotes -o ftp://user:pass@ftp.example.com/path/quotes.csv
 ```
