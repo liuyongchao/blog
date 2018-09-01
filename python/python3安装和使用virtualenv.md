@@ -45,6 +45,6 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 ```
 * 2.5. 自定义python版本(mkvirtualenv -p参数可以自定义python版本)
 ```
-## 建立python2虚拟环境py2
+# 建立python2虚拟环境py2
 [opsky@localhost]$mkvirtualenv -p /usr/bin/python2 py2
 ```
