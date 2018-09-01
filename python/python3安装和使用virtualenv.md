@@ -6,7 +6,8 @@
 [root@localhost]# which virtualenvwrapper.sh
 #假设输出是/usr/local/bin/virtualenvwrapper.sh
 ```
-## 二. 使用这里以普通用户为例
+## 二. 使用(普通用户为例)
+
 * 2.1. 创建virtualenv文件夹
 ```
 #目录位置可自定义
