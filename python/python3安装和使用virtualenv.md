@@ -1,7 +1,7 @@
 ## 一. 安装
-* 前提: python3和pip3都已经安装。
+* 前提: python3和pip3都已经安装。--user普通用户安装
 ```
-[root@localhost]# pip3 install virtualenv virtualenvwrapper
+[root@localhost]# pip3 install virtualenv virtualenvwrapper --user
 #查看virtualenvwrapper.sh的位置
 [root@localhost]# which virtualenvwrapper.sh
 #假设输出是/usr/local/bin/virtualenvwrapper.sh
