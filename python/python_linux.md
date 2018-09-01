@@ -50,6 +50,8 @@ scrapy crawl quotes -o quotes.json
 scrapy crawl quotes -o quotes.jl
 scrapy crawl quotes -o quotes.csv
 scrapy crawl quotes -o quotes.xml
+scrapy crawl quotes -o quotes.marshal
+scrapy crawl quotes -o quotes.pickle
 ```
 ## 6.远程ftp
 ```
