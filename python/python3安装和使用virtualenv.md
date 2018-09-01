@@ -1,10 +1,11 @@
 ## 一. 安装
-*前提: python3和pip3都已经安装。
+* 前提: python3和pip3都已经安装。
 ```
 [root@localhost]# pip3 install virtualenv virtualenvwrapper
 #查看virtualenvwrapper.sh的位置
 [root@localhost]# which virtualenvwrapper.sh
 #假设输出是/usr/local/bin/virtualenvwrapper.sh
+```
 ## 二. 使用这里以普通用户为例
 * 2.1. 创建virtualenv文件夹
 ```
@@ -45,6 +46,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 ```
 mkvirtualenv -p参数可以自定义python版本
 
-#建立python2虚拟环境py2
+## 建立python2虚拟环境py2
+```
 [opsky@localhost]$mkvirtualenv -p /usr/bin/python2 py2
 ```
