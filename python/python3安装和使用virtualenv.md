@@ -48,3 +48,15 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # 建立python2虚拟环境py2
 [opsky@localhost]$mkvirtualenv -p /usr/bin/python2 py2
 ```
+## 3.virtualenv安装scrapy
+```
+pip install scrapy
+```
+* 报错处理,信息如下
+```
+Failed building wheel for Twisted
+#解决方案
+在此网站https://www.lfd.uci.edu/~gohlke/pythonlibs/下载对应版本及系统的Twisted‑18.7.0‑cp37‑cp37m‑win_amd64.whl（AMD核、python37）
+pip install D:\wisted‑18.7.0‑cp37‑cp37m‑win_amd64.whl
+pin install scrapy
+```
