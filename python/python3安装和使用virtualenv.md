@@ -60,3 +60,8 @@ Failed building wheel for Twisted
 pip install D:\wisted‑18.7.0‑cp37‑cp37m‑win_amd64.whl
 pin install scrapy
 ```
+* 关键词修改async修改为async1
+* 安装 pip install pywin32
+```
+pip install pywin32
+```
