@@ -22,7 +22,7 @@ root用户操作
 *** 是启动ES的用户
 ```
 ### elasticsearch查询语法
-```
+```bash
 #查询各index文档总数
 GET /_cat/indices?v
 #查询文档总数
