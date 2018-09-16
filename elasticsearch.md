@@ -24,7 +24,6 @@ root用户操作
 ### logstash
 ```
 #1.mysql.conf配置
-```
 stdin{
 
         }
@@ -65,7 +64,6 @@ output {
     template => "/home/naxxm/logstash-6.4.0/config/URLCONTENT_COPY.json"
   }
 }
-```
 #2.创建索引
 POST /urlcontent_copy
 #3.创建ik分词mapping
