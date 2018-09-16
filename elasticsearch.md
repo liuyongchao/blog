@@ -402,4 +402,19 @@ curl -XPOST http://localhost:9200/urlcontent_copy/urlcontent_copy_type/_mapping
         }
   }
 ```
+### 查词
+```
+curl -H "Content-Type: application/json" -XPOST http://localhost:9200/urlcontent_copy/urlcontent_copy_type/_search?pretty  -d'
+{
+    "query" : { "match" : { "ir_content" : "测绘" }},
+    "highlight" : {
+        "pre_tags" : ["<font color='red'>"],
+        "post_tags" : ["</font>"],
+        "fields" : {
+            "ir_content" : {}
+        }
+    }
+}
+'
+```
 
