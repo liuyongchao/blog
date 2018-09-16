@@ -21,6 +21,19 @@ root用户操作
 *** soft nofile 65536
 *** 是启动ES的用户
 ```
+### elasticsearch查询语法
+```
+#查询各index文档总数
+GET /_cat/indices?v
+#查询文档总数
+GET /_cat/count?v
+#查询指定index文档数
+GET /_cat/count/urlcontent_copy?v
+```
+
+
+
+
 ### logstash
 ```
 #1.mysql.conf配置
@@ -417,4 +430,3 @@ curl -H "Content-Type: application/json" -XPOST http://localhost:9200/urlcontent
 }
 '
 ```
-
