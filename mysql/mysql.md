@@ -1,12 +1,14 @@
-```
+```shell
 nohup  mysqldump -uroot -p**** radar2017 URLCONTENT  -e --max_allowed_packet=1048576 --net_buffer_length=16384 > /tmp/content.sql &
 ```
 
-```
+
+
+```shell
 nohup mysql -h 127.0.0.1 -u root -p*** -P 3306 -e "SELECT * from table"  >> /tmp/20180905/3days20180905.txt &
 ```
 ### shell脚本执行指定sql语句[单语句执行]
-```
+```shell
 options=(
 "全国采集量统计1"
 "全国采集量统计2"
@@ -43,7 +45,7 @@ do
 done
 ```
 ### shell脚本执行批量sql语句[多语句执行]
-```
+```shell
 #!/bin/bash
 MYWEEK="`date +%W`"
 MYDATE="`date +%Y%m%d`"
