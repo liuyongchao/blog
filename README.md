@@ -2,7 +2,7 @@
 > git init
 > git add .
 > git commit -m 'first commit'
-> git add remote origin git@liuyongchao@git.com/liuyongchao/bigdata.git
+> git remote add origin git@liuyongchao@git.com/liuyongchao/bigdata.git
 > git push -f origin master
 > git remove origin
 > git fetch --all
