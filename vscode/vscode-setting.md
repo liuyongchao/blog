@@ -19,3 +19,22 @@
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
 }
 ```
+
+```
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    // 大写
+    "key": "ctrl+u",
+    "command": "editor.action.transformToUppercase",
+    "when": "editorTextFocus"
+},
+{
+    // 小写
+    "key": "ctrl+l",
+    "command": "editor.action.transformToLowercase",
+    "when": "editorTextFocus"
+}
+]
+```
+

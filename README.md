@@ -2,15 +2,18 @@
 > git init
 > git add .
 > git commit -m 'first commit'
-> git add remote origin git@liuyongchao@git.com/liuyongchao/bigdata.git
+> git remote add origin git@liuyongchao@git.com/liuyongchao/bigdata.git
 > git push -f origin master
 > git remove origin
 > git fetch --all
 > git reset --hard origin/master
 > git pull
+>
+> git pull origin master –allow-unrelated-histories
 
 ### blog
+nslookup
+
 my Blog
-# roadmap
-### GA
-### 网络七层协议
+
+### threejs三维模型框架
