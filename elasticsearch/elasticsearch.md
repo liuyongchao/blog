@@ -2,7 +2,7 @@
 * 1.下载elasticsearch
 ```
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
-tar -xzvf elasticsearch-6.5.4.tar.g
+tar -xzvf elasticsearch-6.5.4.tar.gz
 ```
 * 2.运行elasticsearch
 ```
