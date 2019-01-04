@@ -6,7 +6,7 @@ tar -xzvf elasticsearch-6.5.4.tar.gz
 ```
 * 2.运行elasticsearch
 ```
-./elasticsearch-6.5.4/bin/elasticsearch
+./elasticsearch-6.5.4/bin/elasticsearch -d
 出现下面错误解决方法
 err1: max virtual memory areas vm.max_map_count...
 root用户操作
@@ -21,6 +21,10 @@ root用户操作
 *** soft nofile 65536
 *** 是启动ES的用户
 ```
+* 3.检查是否运行成功
+```
+curl http://localhost:9200/
+```
 ### elasticsearch查询语法
 ```bash
 #查询各index文档总数
@@ -30,9 +34,6 @@ GET /_cat/count?v
 #查询指定index文档数
 GET /_cat/count/urlcontent_copy?v
 ```
-
-
-
 
 ### logstash
 ```
