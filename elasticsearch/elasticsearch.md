@@ -1,8 +1,8 @@
 ### elasticsearch下载安装
 * 1.下载elasticsearch
 ```
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.0.tar.gz
-tar -xzvf elasticsearch-6.4.0.tar.gz-xzvf elasticsearch-6.4.0.tar.gz
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
+tar -xzvf elasticsearch-6.5.4.tar.g
 ```
 * 2.运行elasticsearch
 ```
