@@ -6,7 +6,7 @@ tar -xzvf elasticsearch-6.5.4.tar.gz
 ```
 * 2.运行elasticsearch
 ```
-elasticsearch-6.4.0\bin\elasticsearch
+./elasticsearch-6.5.4/bin/elasticsearch
 出现下面错误解决方法
 err1: max virtual memory areas vm.max_map_count...
 root用户操作
