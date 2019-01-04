@@ -2,7 +2,7 @@
 * 1.下载elasticsearch
 ```
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.4.tar.gz
-tar -xzvf elasticsearch-6.5.4.tar.gz
+tar -zxvf elasticsearch-6.5.4.tar.gz
 ```
 * 2.运行elasticsearch
 ```
@@ -35,6 +35,21 @@ GET /_cat/count?v
 GET /_cat/count/urlcontent_copy?v
 ```
 
+### kibana可视化
+* 1.下载解压kibana
+```
+wget https://artifacts.elastic.co/downloads/kibana/kibana-6.5.4-linux-x86_64.tar.gz
+tar -zxvf kibana-6.5.4-linux-x86_64.tar.gz
+```
+* 2.配置config/kibana.yml
+```
+elasticsearch.url: "http://localhost:9200"
+```
+* 3.启动kibana
+```
+nohup ./kibana-6.5.4-linux-x86_64/bin/kibana &
+```
+* 4. 访问 http://localhost:5601
 ### logstash
 ```
 #1.mysql.conf配置
