@@ -74,6 +74,12 @@ nohup ./kibana-6.5.4-linux-x86_64/bin/kibana &
 ```
 * 4. 访问 http://localhost:5601
 ### logstash
+* 1.下载logstash
+```
+wget https://artifacts.elastic.co/downloads/logstash/logstash-6.5.4.tar.gz
+tar -zxvf logstash-6.5.4.tar.gz
+```
+* 2.配置logstash.conf
 ```
 #1.mysql.conf配置
 stdin{
@@ -453,6 +459,10 @@ curl -XPOST http://localhost:9200/urlcontent_copy/urlcontent_copy_type/_mapping
 		   }
         }
   }
+```
+* 3.运行logstash
+```
+bin/logstash -f logstash.conf
 ```
 ### 查词
 ```
