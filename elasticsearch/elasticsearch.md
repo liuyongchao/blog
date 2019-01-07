@@ -81,46 +81,63 @@ tar -zxvf logstash-6.5.4.tar.gz
 ```
 * 2.配置logstash.conf
 ```
+#0 创建statement_filepath对应的文件`statement_filepath => "/home/naxxm/logstash-6.4.0/config/urlcontent_ckm.sql"`
+select * from table where lastime >= :sql_last_value
+#00 创建last_run_metadata_path对应的文件`last_run_metadata_path => "/home/naxxm/logstash-6.4.0/run_metadata.d/urlcontent_ckm_last_ir_sid.txt"`，创建对应文件夹即可
 #1.mysql.conf配置
-stdin{
-
+input {
+        stdin{
         }
-jdbc {
-    jdbc_driver_library => "/home/naxxm/logstash-6.4.0/config/mysql-connector-java-5.1.36-bin.jar"
-    jdbc_driver_class => "com.mysql.jdbc.Driver"
-    jdbc_connection_string => "jdbc:mysql://127.0.0.1:3306/bigdata"
-    jdbc_user => "root"
-    jdbc_password => "123456"
-    #statement => "select IR_SID,CAST(IR_CONTENT AS CHAR(10000) CHARACTER SET utf8) as IR_CONTENT from URLCONTENT_2018 where IR_SID>= :sql_last_value limit 10"
-    statement_filepath => "/home/naxxm/logstash-6.4.0/config/URLCONTENT_COPY.sql"
-    use_column_value => true
-    tracking_column => "ir_sid"
-    jdbc_paging_enabled => "true"
-    jdbc_page_size => "50000"
-    schedule => "* * * * *"
-    #type => "jdbc"
-    jdbc_default_timezone =>"Asia/Shanghai"
-  }
+        jdbc {
+                jdbc_driver_library => "/home/naxxm/logstash-6.4.0/config/mysql-connector-java-5.1.36-bin.jar"
+                jdbc_driver_class => "com.mysql.jdbc.Driver"
+                jdbc_connection_string => "jdbc:mysql://127.0.0.1:3306/radar2"
+                jdbc_user => "root"
+                jdbc_password => "123456"
+                #statement => "select * from URLCONTENT_CKM_2018 where ir_inserttime >= :sql_last_value" 
+                statement_filepath => "/home/naxxm/logstash-6.4.0/config/urlcontent_ckm.sql"
+                use_column_value => true
+                tracking_column => ir_inserttime
+                tracking_column_type => timestamp
+                record_last_run => true
+                last_run_metadata_path => "/home/naxxm/logstash-6.4.0/run_metadata.d/urlcontent_ckm_last_ir_sid.txt"
+                clean_run => false
+                lowercase_column_names => true
+                jdbc_paging_enabled => true
+                jdbc_page_size => 50000
+                schedule => "* * * * *"
+                jdbc_default_timezone => "Asia/Shanghai"
+                type => "urlcontent_ckm"
+        }
 }
 filter {
         json {
-        source => "message"
-        remove_field => ["message"]
+                source => "message"
+                remove_field => ["message"]
         }
-
 }
 output {
-  stdout {
-    codec => rubydebug
-  }
-  elasticsearch {
-    hosts => "127.0.0.1:9200"
-    index => "urlcontent_copy"
-    document_id => "%{ir_sid}"
-    document_type =>"urlcontent_copy_type"
-    template_overwrite => true
-    template => "/home/naxxm/logstash-6.4.0/config/URLCONTENT_COPY.json"
-  }
+    if[type] == "urlcontent_ckm" {
+        elasticsearch {
+                hosts => ["127.0.0.1:9200"]
+                index => "urlcontent_ckm"
+                document_id => "%{ir_hkey}"
+                document_type =>"urlcontent_ckm_type"
+                template_overwrite => true
+        }
+    }
+    if[type] == "urlcontent_ckm" {
+        elasticsearch {
+                hosts => ["127.0.0.1:9200"]
+                index => "urlcontent_ckm_2018"
+                document_id => "%{ir_hkey}"
+                document_type =>"urlcontent_ckm_2018_type"
+                template_overwrite => true
+        }       
+    }
+        stdout {
+                codec => rubydebug
+        }
 }
 #2.创建索引
 POST /urlcontent_copy
