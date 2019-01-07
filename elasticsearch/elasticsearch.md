@@ -753,6 +753,7 @@ POST urlcontent_ckm/urlcontent_ckm_type/_mapping
 * 3.运行logstash
 ```
 bin/logstash -f logstash.conf
+nohup ./logstash-6.5.4/bin/logstash -f ./logstash-6.5.4/config/mysql.conf >/dev/null 2>log &&
 ```
 
 ### 查词
