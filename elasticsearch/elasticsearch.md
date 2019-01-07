@@ -84,6 +84,7 @@ tar -zxvf logstash-6.5.4.tar.gz
 #0 创建statement_filepath对应的文件`statement_filepath => "/home/naxxm/logstash-6.4.0/config/urlcontent_ckm.sql"`
 select * from table where lastime >= :sql_last_value
 #00 创建last_run_metadata_path对应的文件`last_run_metadata_path => "/home/naxxm/logstash-6.4.0/run_metadata.d/urlcontent_ckm_last_ir_sid.txt"`，创建对应文件夹即可
+#000  驱动下载mysql-connector-java-5.1.36-bin.jar
 #1.mysql.conf配置
 input {
         stdin{
