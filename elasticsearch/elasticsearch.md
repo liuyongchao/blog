@@ -8,10 +8,10 @@ tar -zxvf elasticsearch-6.5.4.tar.gz
 ```
 ./elasticsearch-6.5.4/bin/elasticsearch -d
 出现下面错误解决方法
-err1: max virtual memory areas vm.max_map_count...
+err1: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
 root用户操作
 (1)修改vi /etc/sysctl.conf
-(2)添加配置：vm.max_map_count=655360
+(2)添加配置：vm.max_map_count=262144
 (3)执行命令：sysctl -p
 err2:max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
 root用户操作
@@ -20,10 +20,29 @@ root用户操作
 *** hard nofile 65536
 *** soft nofile 65536
 *** 是启动ES的用户
+err3:: max number of threads [1024] for user [elasticsearch] is too low, increase to at least [4096]
+sudo vim /etc/security/limits.d/90-nproc.conf
+修改后重启服务
+*          soft    nproc     4096
+root       soft    nproc     unlimited
+appop       soft    nproc     unlimited
+```
+err4: system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
+sudo vim /etc/security/limits.d/90-nproc.conf
+```
+vim elasticsearch.yml
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
 ```
 * 3.检查是否运行成功
 ```
 curl http://localhost:9200/
+```
+* 4.配置远程服务
+```
+#配置为本机IP（推荐），也可配置为0.0.0.0
+network.host: 10.246.3.129
+http.port: 9200
 ```
 ### elasticsearch查询语法
 ```bash
@@ -43,7 +62,11 @@ tar -zxvf kibana-6.5.4-linux-x86_64.tar.gz
 ```
 * 2.配置config/kibana.yml
 ```
+#配置目标elasticsearch.url
 elasticsearch.url: "http://localhost:9200"
+#配置远程访问
+server.port: 5601
+server.host: 0.0.0.0
 ```
 * 3.启动kibana
 ```
