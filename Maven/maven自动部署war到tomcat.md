@@ -26,4 +26,12 @@
 	</configuration>
 </plugin>
 ```
+### 3.执行mvn命令
+```
+(1) mvn clean install
+
+(2) mvn tomcat7:deploy (第一次部署执行)
+
+(3) mvn tomcat7:redeploy（第二次部署是执行）
+```
 
