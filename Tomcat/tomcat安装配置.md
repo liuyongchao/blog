@@ -22,6 +22,7 @@ vim ./apache-tomcat-8.5.37/conf/server.xml
 * manager-status - 仅访问“服务器状态”页面。
 * manager-script - 访问本文档中描述的工具友好的纯文本界面，以及“服务器状态”页面。
 * manager-jmx - 访问JMX代理接口和“服务器状态”页面。
+* admin-gui - 访问host-mamager需配置此角色
 ```
 <role rolename="manager-gui"/>
 <user username="admin" password="elasticsearch@dev" roles="manager-gui"/>
