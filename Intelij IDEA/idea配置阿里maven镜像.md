@@ -1,4 +1,4 @@
-# idea配置aliyun maven
+# idea配置阿里maven镜像
 
 ## 1.勾选如下图所示Override
 
@@ -24,4 +24,3 @@
 ```
 
 ## 3.点击`OK`即可
-
