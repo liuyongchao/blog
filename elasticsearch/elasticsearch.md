@@ -27,9 +27,10 @@ sudo vim /etc/security/limits.d/90-nproc.conf
 root       soft    nproc     unlimited
 appop       soft    nproc     unlimited
 ```
-err4: system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
-sudo vim /etc/security/limits.d/90-nproc.conf
 ```
+err4: system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk
+
+sudo vim /etc/security/limits.d/90-nproc.conf
 vim elasticsearch.yml
 bootstrap.memory_lock: false
 bootstrap.system_call_filter: false
@@ -73,6 +74,14 @@ server.host: 0.0.0.0
 nohup ./kibana-6.5.4-linux-x86_64/bin/kibana &
 ```
 * 4. 访问 http://localhost:5601
+```
+使用如下命令都无法查询到kibana的PID
+ps -ef  | grep kibana
+ps -ef  | grep 5601
+经过实践，使用如下方法可以查询到kibana的PID：
+ps -ef | grep node
+```
+
 ### logstash
 * 1.下载logstash
 ```
