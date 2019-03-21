@@ -1,4 +1,5 @@
 ### git操作
+
 ```
 git init
 git add .
@@ -13,7 +14,7 @@ git pull origin master –allow-unrelated-histories
 
 #git分支图查看
 git log --graph --pretty=oneline --abbrev-commit
-### blog
+#blog
 nslookup
 my Blog
-```bash
+```
