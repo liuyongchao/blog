@@ -13,10 +13,7 @@ git pull origin master –allow-unrelated-histories
 
 #git分支图查看
 git log --graph --pretty=oneline --abbrev-commit
-```bash
 ### blog
 nslookup
-
 my Blog
-
-### threejs三维模型框架
+```bash
