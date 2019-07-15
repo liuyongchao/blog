@@ -11,4 +11,3 @@ service iptables save
 service iptables start
 chkconfig --level 35 iptables on
 ```
-
