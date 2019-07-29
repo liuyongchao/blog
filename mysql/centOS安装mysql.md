@@ -6,7 +6,6 @@
 #官网https://dev.mysql.com/downloads/mysql/5.6.html#downloads
 #下载MySQL-server-5.6.42-1.el6.x86_64.rpm
 wget https://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-server-5.6.42-1.el6.x86_64.rpm
-wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 #下载MySQL-client-5.6.42-1.el6.x86_64.rpm
 wget https://dev.mysql.com/get/Downloads/MySQL-5.6/MySQL-client-5.6.42-1.el6.x86_64.rpm
 ```
@@ -43,7 +42,7 @@ flush privileges;
 ### 1.下载mysql的repo源
 
 ```bash
-wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 ```
 
 ### 2.安装包
@@ -80,6 +79,7 @@ service mysqld restart
 
 ```bash
 #更新root密码
+ALTER USER 'root'@'localhost'IDENTIFIED BY '********';
 mysql > update mysql.user set authentication_string=password('123456') where user='root' and Host = 'localhost';
 ```
 

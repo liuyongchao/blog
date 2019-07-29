@@ -88,3 +88,6 @@ subject
 git pull origin feature/generated-pages:feature/four-step
 ```
 
+## git 版本管理方案
+
+![](/Users/naxxm/project/blog/images/git-001.jpeg)
