@@ -137,6 +137,8 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
 #(方法三)当前登陆用户
 SET PASSWORD = PASSWORD('123456');
+#5.7之前
+update user set password=password('123456') where user='root';
 ```
 
 ## 三、用户创建、权限及远程授权
@@ -154,7 +156,7 @@ CREATE USER 'foo'@'localhost' IDENTIFIED BY '123456';
 
 ```mysql
 #所有权限
-grant all privileges on *.* to 'foo'@'localhost';
+grant all privileges on *.* to 'foo'@'localhost' IDENTIFIED BY '123456';
 #授予foo本地localhost用户对mysql库user表的增删改查权限
 GRANT INSERT,DELETE,UPDATE,SELECT ON mysql.user TO 'foo'@'localhost';
 #从mysql数据库的grant表中重新加载权限数据
@@ -170,5 +172,30 @@ GRANT ALL PRIVILEGES ON *.* TO 'foo'@'%' IDENTIFIED BY '123456';
 flush privileges;
 #查询是否修改成功
 select user,authentication_string,host from mysql.user;
+```
+
+### 4.取消授权
+
+```mysql
+revoke all on *.* from 'foo'@'%';
+```
+
+### 5.附加
+
+```mysql
+#查看授权列表
+select * from mysql.user where user='foo'\G;
+#查看授权数据库
+select * from mysql.db where user='foo'\G;
+#查看授权数据表
+select * from mysql.tables_priv\G;
+#查看授权内容
+show grants for foo;
+```
+
+### 6.删除用户
+
+```mysql
+drop user foo@'%';
 ```
 
