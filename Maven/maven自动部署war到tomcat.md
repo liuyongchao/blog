@@ -35,3 +35,21 @@
 (3) mvn tomcat7:redeploy（第二次部署是执行）
 ```
 
+### 4.配置阿里镜像
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+      <mirrors>
+        <mirror>
+            <id>alimaven</id>
+            <name>aliyun maven</name>      
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+      </mirrors>
+</settings>
+```
+
