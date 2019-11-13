@@ -2,7 +2,7 @@
 
 ## 1.勾选如下图所示Override
 
-## ![image-20190116172842522](/Users/naxxm/Library/Application Support/typora-user-images/image-20190116172842522.png)
+## ![image-20190116172842522](../images/image-20190116172842522.png)
 
 ## 2.在目录/Users/naxxm/.m2下，新建settings.xml
 
